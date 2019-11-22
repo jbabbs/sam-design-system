@@ -1,0 +1,37 @@
+package(default_visibility = ["//visibility:public"])
+
+load(
+    "//tools:defaults.bzl",
+    "markdown_to_html",
+    "ng_module",
+    "ng_test_library",
+    "ng_web_test_suite",
+    "sass_library",
+)
+
+ng_module(
+    name = "footer",
+    srcs = glob(
+        ["**/*.ts"],
+        exclude = ["**/*.spec.ts"],
+    ),
+    assets = glob(["**/*.html"]),
+    module_name = "@gsa-sam/components/footer",
+    deps = [
+        "@npm//@angular/core",
+        "@npm//@angular/common",
+        "@npm//@angular/forms",
+        "@npm//@angular/router",
+        "//src/components/core"
+    ],
+)
+
+markdown_to_html(
+    name = "overview",
+    srcs = [":footer.md"],
+)
+
+filegroup(
+    name = "source-files",
+    srcs = glob(["**/*.ts"]),
+)

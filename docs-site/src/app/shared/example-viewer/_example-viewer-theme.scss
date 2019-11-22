@@ -1,0 +1,40 @@
+@mixin example-viewer-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  $warn: map-get($theme, warn);
+  $background: map-get($theme, background);
+  $foreground: map-get($theme, foreground);
+
+  example-viewer {
+    .docs-example-viewer-wrapper {
+      border: 1px solid rgba(210, 210, 210, 1);
+      // box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+      // margin: 4px;
+    }
+
+    .docs-example-viewer-title {
+      color: rgba(58, 42, 42, 0.54);
+    background: rgba(219, 220, 220, 1);
+    }
+
+    .docs-example-source-copy {
+      color: mat-color($foreground, hint-text);
+      right: 8px;
+
+      [dir='rtl'] & {
+        right: auto;
+        left: 8px;
+      }
+    }
+
+    .docs-example-source {
+      border-bottom: 1px solid mat-color($foreground, divider);
+      overflow: auto;
+    }
+  }
+}
+
+
+.mat-tab-nav-bar.mat-primary .mat-ink-bar {
+  background-color: #737790 !important;
+}

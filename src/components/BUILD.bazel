@@ -1,0 +1,30 @@
+package(default_visibility = ["//visibility:public"])
+load(
+    "//src/components:config.bzl",
+    "COMPONENTS_ENTRYPOINTS",
+    "COMPONENTS_SCSS_LIBS",
+    "COMPONENTS_TARGETS",
+    "COMPONENTS_TESTING_TARGETS",
+)
+load("//tools:defaults.bzl", "ng_package", "ts_library")
+
+ts_library(
+    name = "sds-components",
+    srcs = ["index.ts"],
+    module_name = "@gsa-sam/components",
+)
+
+filegroup(
+    name = "overviews",
+    srcs = ["//src/components/%s:overview" % name for name in COMPONENTS_ENTRYPOINTS],
+)
+
+# Creates the @gsa-sam/components package published to npm.
+ng_package(
+    name = "npm_package",
+    srcs = ["package.json"],
+    entry_point = ":index.ts",
+    entry_point_name = "sds-components",
+    tags = ["donot"],
+    deps = COMPONENTS_TARGETS + COMPONENTS_TESTING_TARGETS,
+)
