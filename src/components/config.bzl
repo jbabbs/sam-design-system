@@ -23,9 +23,3 @@ COMPONENTS_TARGETS = ["//src/components"] + \
 # List of all testing entry-point targets of the SDS Components package.
 COMPONENTS_TESTING_TARGETS = ["//src/components/%s" % ep for ep in COMPONENTS_TESTING_ENTRYPOINTS]
 
-# List that references the sass libraries for each Component non-testing entry-point. This
-# can be used to specify dependencies for the "all-theme.scss" file in core.
-COMPONENTS_SCSS_LIBS = [
-    "//src/components/%s:%s_scss_lib" % (ep, ep.replace("-", "_"))
-    for ep in COMPONENTS_ENTRYPOINTS
-]

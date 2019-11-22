@@ -54,7 +54,7 @@ ng_package(
     packages = [
         "//src/cdk/schematics:npm_package",
     ],
-    tags = ["release-package"],
+    tags = ["do-not"],
     deps = CDK_TARGETS,
 )
 

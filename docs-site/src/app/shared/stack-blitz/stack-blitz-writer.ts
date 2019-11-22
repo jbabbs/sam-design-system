@@ -8,9 +8,9 @@ import {materialVersion} from '../version/version';
 const STACKBLITZ_URL = 'https://run.stackblitz.com/api/angular/v1';
 
 const COPYRIGHT =
-  `Copyright 2019 Google LLC. All Rights Reserved.
+  `Copyright YEAR OWNER.
     Use of this source code is governed by an MIT-style license that
-    can be found in the LICENSE file at http://angular.io/license`;
+    can be found in the LICENSE file at REPO`;
 
 /**
  * Path that refers to the docs-content from the "@gsa-sam/components-examples" package. The
@@ -52,6 +52,8 @@ const dependencies = {
   '@angular/platform-browser': angularVersion,
   '@angular/platform-browser-dynamic': angularVersion,
   '@angular/router': angularVersion,
+  '@gsa-sam/components': '1.0.0-beta.0',
+  '@gsa-sam/sam-styles': '^0.0.39',
   'angular-in-memory-web-api': '~0.9.0',
   'core-js': '^2.6.9',
   'hammerjs': '^2.0.8',

@@ -14,6 +14,7 @@ app-component-viewer {
 
 .docs-component-viewer-section-tab {
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .docs-component-viewer-tabbed-content {
@@ -34,20 +35,6 @@ app-component-viewer {
       flex-direction: column;
     }
   }
-
-  table-of-contents {
-    top: 35px;
-    position: sticky;
-
-    // Reposition on top of content on small screens and remove
-    // sticky positioning
-    @media (max-width: $small-breakpoint-width) {
-      order: -1;
-      position: inherit;
-      width: auto;
-      padding-left: 0;
-    }
-  }
 }
 
 .docs-component-view-text-content {
@@ -57,7 +44,6 @@ app-component-viewer {
 
 .docs-component-api,
 .docs-component-overview {
-  width: 80%;
   display: inline-flex;
 
   @media (max-width: $small-breakpoint-width) {

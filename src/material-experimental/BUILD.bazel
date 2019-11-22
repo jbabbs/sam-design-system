@@ -25,6 +25,6 @@ ng_package(
     srcs = ["package.json"],
     data = MATERIAL_EXPERIMENTAL_SCSS_LIBS,
     entry_point = ":public-api.ts",
-    tags = ["release-package"],
+    tags = ["do-not"],
     deps = MATERIAL_EXPERIMENTAL_TARGETS + MATERIAL_EXPERIMENTAL_TESTING_TARGETS,
 )

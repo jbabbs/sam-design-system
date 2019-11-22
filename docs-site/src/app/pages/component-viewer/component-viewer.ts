@@ -15,8 +15,7 @@ import {combineLatest, Observable, ReplaySubject, Subject} from 'rxjs';
 import {map, takeUntil} from 'rxjs/operators';
 import {DocViewerModule} from '../../shared/doc-viewer/doc-viewer-module';
 import {DocItem, DocumentationItems} from '../../shared/documentation-items/documentation-items';
-import {TableOfContents} from '../../shared/table-of-contents/table-of-contents';
-import {TableOfContentsModule} from '../../shared/table-of-contents/table-of-contents.module';
+
 import {ComponentPageTitle} from '../page-title/page-title';
 
 @Component({
@@ -70,24 +69,16 @@ export class ComponentViewer implements OnDestroy {
  */
 export class ComponentBaseView implements OnInit, OnDestroy {
   @ViewChild('initialFocusTarget', {static: false}) focusTarget: ElementRef;
-  @ViewChild('toc', {static: false}) tableOfContents: TableOfContents;
-
-  showToc: Observable<boolean>;
 
   destroyed = new Subject<void>();
 
   constructor(public componentViewer: ComponentViewer, breakpointObserver: BreakpointObserver) {
-    this.showToc = breakpointObserver.observe('(max-width: 1200px)')
-      .pipe(map(result => !result.matches));
   }
 
   ngOnInit() {
     this.componentViewer.componentDocItem.pipe(takeUntil(this.destroyed)).subscribe(() => {
       // 100ms timeout is used to allow the page to settle before moving focus for screen readers.
       setTimeout(() => this.focusTarget.nativeElement.focus({preventScroll: true}), 100);
-      if (this.tableOfContents) {
-        this.tableOfContents.resetHeaders();
-      }
     });
   }
 
@@ -95,12 +86,6 @@ export class ComponentBaseView implements OnInit, OnDestroy {
     this.destroyed.next();
   }
 
-  updateTableOfContents(sectionName: string, docViewerContent: HTMLElement) {
-    if (this.tableOfContents) {
-      this.tableOfContents.addHeaders(sectionName, docViewerContent);
-      this.tableOfContents.updateScrollPosition();
-    }
-  }
 }
 
 @Component({
@@ -143,7 +128,6 @@ export class ComponentExamples extends ComponentBaseView {
     RouterModule,
     DocViewerModule,
     CommonModule,
-    TableOfContentsModule,
   ],
   exports: [ComponentViewer],
   declarations: [ComponentViewer, ComponentOverview, ComponentApi, ComponentExamples],

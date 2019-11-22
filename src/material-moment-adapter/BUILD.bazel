@@ -57,6 +57,6 @@ ng_package(
     name = "npm_package",
     srcs = ["package.json"],
     entry_point = ":public-api.ts",
-    tags = ["release-package"],
+    tags = ["do-not"],
     deps = [":material-moment-adapter"],
 )

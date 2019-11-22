@@ -4,8 +4,6 @@
   </span>
   <doc-viewer
       documentUrl="/docs-content/overviews/{{docItem.packageName}}/{{docItem.id}}.html"
-      class="docs-component-view-text-content docs-component-overview"
-      (contentRendered)="updateTableOfContents('Overview Content', $event)">
+      class="docs-component-view-text-content docs-component-overview">
   </doc-viewer>
-  <table-of-contents #toc container=".mat-drawer-content" *ngIf="showToc | async"></table-of-contents>
 </ng-container>

@@ -7,25 +7,13 @@ import {MatInputModule} from '@angular/material/input';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatTreeModule} from '@angular/material/tree';
 import {TreeChecklistExample} from './tree-checklist/tree-checklist-example';
-import {TreeDynamicExample} from './tree-dynamic/tree-dynamic-example';
-import {TreeFlatOverviewExample} from './tree-flat-overview/tree-flat-overview-example';
-import {TreeLoadmoreExample} from './tree-loadmore/tree-loadmore-example';
-import {TreeNestedOverviewExample} from './tree-nested-overview/tree-nested-overview-example';
 
 export {
   TreeChecklistExample,
-  TreeDynamicExample,
-  TreeFlatOverviewExample,
-  TreeLoadmoreExample,
-  TreeNestedOverviewExample,
 };
 
 const EXAMPLES = [
   TreeChecklistExample,
-  TreeDynamicExample,
-  TreeFlatOverviewExample,
-  TreeLoadmoreExample,
-  TreeNestedOverviewExample,
 ];
 
 @NgModule({

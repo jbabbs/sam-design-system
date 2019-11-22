@@ -169,6 +169,7 @@ function analyzeExamples(sourceFiles: string[], baseFile: string): AnalyzedExamp
  */
 export function generateExampleModule(sourceFiles: string[], outputFile: string,
                                       baseDir: string = path.dirname(outputFile)) {
+  console.log(sourceFiles);
   const analysisData = analyzeExamples(sourceFiles, baseDir);
   const generatedModuleFile = inlineExampleModuleTemplate(analysisData);
 

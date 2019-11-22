@@ -6,18 +6,12 @@
   <span>
     <doc-viewer
       documentUrl="/docs-content/api-docs/{{docItem.packageName}}-{{docItem.id}}.html"
-      class="docs-component-view-text-content docs-component-api"
-      (contentRendered)="updateTableOfContents(docItem.name, $event)">
+      class="docs-component-view-text-content docs-component-api">
     </doc-viewer>
 
     <doc-viewer *ngFor="let additionalApiDoc of docItem.additionalApiDocs"
       documentUrl="/docs-content/api-docs/{{additionalApiDoc.path}}"
-      class="docs-component-view-text-content docs-component-api"
-      (contentRendered)="updateTableOfContents(additionalApiDoc.name, $event)">
+      class="docs-component-view-text-content docs-component-api">
     </doc-viewer>
   </span>
-
-  <table-of-contents #toc
-      *ngIf="showToc | async"
-      container=".mat-drawer-content"></table-of-contents>
 </ng-container>

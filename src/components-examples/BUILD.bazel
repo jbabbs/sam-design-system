@@ -5,11 +5,8 @@ load("//tools/highlight-files:index.bzl", "highlight_files")
 load("//tools/package-docs-content:index.bzl", "package_docs_content")
 
 EXAMPLE_PACKAGES = [
-    # TODO(devversion): try to have for each entry-point a bazel package so that
-    # we can automate this using the "package.bzl" variables. Currently generated
-    # with "bazel query 'kind("ng_module", //src/components-examples/...:*)' --output="label"
     "//src/components-examples/material/tree",
-    "//src/components-examples/components/footer"
+    "//src/components-examples/components/footer",
 ]
 
 ng_module(
@@ -33,24 +30,9 @@ highlight_files(
 package_docs_content(
     name = "docs-content",
     srcs = {
-        # We want to package the guides in to the docs content. These will be displayed
-        # in the documentation.
-        "//guides": "guides",
-
-        # Package the overviews for "@angular/material" and "@angular/cdk" into the docs content
-        "//src/cdk:overviews": "overviews/cdk",
-        "//src/material:overviews": "overviews/material",
         "//src/components:overviews": "overviews/components",
-
-        # Package the API docs for the Material and CDK package into the docs-content
         "//src:api-docs": "api-docs",
-
-        # In order to be able to run examples in StackBlitz, we also want to package the
-        # plain source files into the docs-content.
         ":example-source-files": "examples-source",
-
-        # For the live-examples in our docs, we want to package the highlighted files
-        # into the docs content. These will be used to show the source code for examples.
         ":highlighted-source-files": "examples-highlighted",
     },
     tags = ["docs-package"],

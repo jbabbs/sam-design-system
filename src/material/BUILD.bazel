@@ -51,6 +51,6 @@ ng_package(
     entry_point = ":index.ts",
     entry_point_name = "material",
     packages = ["//src/material/schematics:npm_package"],
-    tags = ["release-package"],
+    tags = ["do-not"],
     deps = MATERIAL_TARGETS + MATERIAL_TESTING_TARGETS,
 )
