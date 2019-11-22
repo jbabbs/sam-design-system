@@ -29,7 +29,7 @@
   }
 
   .docs-primary-header {
-    background: #70748a;
+    background: mat-color($primary);
 
     h1 {
       color: mat-color($primary, default-contrast);

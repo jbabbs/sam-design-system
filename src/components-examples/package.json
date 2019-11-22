@@ -1,7 +1,7 @@
 {
-  "name": "@angular/components-examples",
+  "name": "@gsa-sam/components-examples",
   "version": "0.0.0-PLACEHOLDER",
-  "description": "Angular Components Examples",
+  "description": "SDS Components Examples",
   "main": "./bundles/components-examples.umd.js",
   "fesm5": "./fesm5/components-examples.js",
   "fesm2015": "./fesm2015/components-examples.js",

@@ -7,7 +7,7 @@
  */
 
 import {Component} from '@angular/core';
-import {EXAMPLE_COMPONENTS} from '@angular/components-examples';
+import {EXAMPLE_COMPONENTS} from '@gsa-sam/components-examples';
 
 /** Renders all material examples listed in the generated EXAMPLE_COMPONENTS. */
 @Component({

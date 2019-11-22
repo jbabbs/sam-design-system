@@ -27,7 +27,7 @@ interface AnalyzedExamples {
 /** Creates an import declaration for the given symbols from the specified file. */
 function createImportDeclaration(relativePath: string, symbols: string[]): string {
   const posixRelativePath = relativePath.replace(/\\/g, '/').replace('.ts', '');
-  return `import {${symbols.join(',')}} from '@angular/components-examples/${posixRelativePath}';`;
+  return `import {${symbols.join(',')}} from '@gsa-sam/components-examples/${posixRelativePath}';`;
 }
 
 /** Inlines the example module template with the specified parsed data. */

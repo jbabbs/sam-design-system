@@ -9,7 +9,7 @@ ng_module(
         "**/*.html",
         "**/*.css",
     ]),
-    module_name = "@angular/components-examples/material/badge",
+    module_name = "@gsa-sam/components-examples/material/badge",
     deps = [
         "//src/material/badge",
         "//src/material/button",

@@ -7,5 +7,5 @@
       class="docs-component-view-text-content docs-component-overview"
       (contentRendered)="updateTableOfContents('Overview Content', $event)">
   </doc-viewer>
-  <!-- <table-of-contents #toc container=".mat-drawer-content" *ngIf="showToc | async"></table-of-contents> -->
+  <table-of-contents #toc container=".mat-drawer-content" *ngIf="showToc | async"></table-of-contents>
 </ng-container>

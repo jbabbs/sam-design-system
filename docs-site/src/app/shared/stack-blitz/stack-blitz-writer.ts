@@ -1,17 +1,19 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
 import {VERSION} from '@angular/material/core';
-import {ExampleData} from '@angular/components-examples';
+import {ExampleData} from '@gsa-sam/components-examples';
 
 import {materialVersion} from '../version/version';
 
 const STACKBLITZ_URL = 'https://run.stackblitz.com/api/angular/v1';
 
 const COPYRIGHT =
-  `Test`;
+  `Copyright 2019 Google LLC. All Rights Reserved.
+    Use of this source code is governed by an MIT-style license that
+    can be found in the LICENSE file at http://angular.io/license`;
 
 /**
- * Path that refers to the docs-content from the "@angular/components-examples" package. The
+ * Path that refers to the docs-content from the "@gsa-sam/components-examples" package. The
  * structure is defined in the Material repository, but we include the docs-content as assets in
  * in the CLI configuration.
  */

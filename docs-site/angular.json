@@ -29,7 +29,7 @@
               },
               {
                 "glob": "**/*",
-                "input": "../components-examples/docs-content",
+                "input": "./node_modules/@gsa-sam/components-examples/docs-content",
                 "output": "/docs-content"
               },
               {

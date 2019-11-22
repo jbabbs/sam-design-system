@@ -7,7 +7,7 @@
  */
 
 import {Component, Input} from '@angular/core';
-import {EXAMPLE_COMPONENTS} from '@angular/components-examples';
+import {EXAMPLE_COMPONENTS} from '@gsa-sam/components-examples';
 import {coerceBooleanProperty} from '@angular/cdk/coercion';
 
 /** Displays a set of components-examples in a mat-accordion. */

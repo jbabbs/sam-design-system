@@ -7,7 +7,7 @@
   border-spacing: 0;
   margin: 0 0 32px 0;
   width: 100%;
-  // box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.24), 0 0 2px rgba(0, 0, 0, 0.12);
 }
 
 .docs-api th,
@@ -40,9 +40,4 @@
   .docs-markdown-td {
     padding: 4px 8px;
   }
-}
-
-
-stack-blitz-button {
-  display: none;
 }
