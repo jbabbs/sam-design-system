@@ -1,21 +1,13 @@
 package(default_visibility = ["//visibility:public"])
 
 load("@npm_bazel_typescript//:index.bzl", "ts_config")
-load("//src/cdk:config.bzl", "CDK_ENTRYPOINTS")
-load("//src/material:config.bzl", "MATERIAL_ENTRYPOINTS", "MATERIAL_TESTING_ENTRYPOINTS")
 load("//src/components:config.bzl", "COMPONENTS_ENTRYPOINTS", "COMPONENTS_TESTING_ENTRYPOINTS")
 load("//tools/dgeni:index.bzl", "dgeni_api_docs")
-
-cdkApiEntryPoints = CDK_ENTRYPOINTS
-
-materialApiEntryPoints = MATERIAL_ENTRYPOINTS + MATERIAL_TESTING_ENTRYPOINTS
 
 componentsApiEntryPoints = COMPONENTS_ENTRYPOINTS + COMPONENTS_TESTING_ENTRYPOINTS
 
 # List that contains all source files that need to be processed by Dgeni.
-apiSourceFiles = ["//src/cdk/%s:source-files" % name for name in cdkApiEntryPoints] + \
-                 ["//src/material/%s:source-files" % name for name in materialApiEntryPoints] + \
-                 ["//src/components/%s:source-files" % name for name in componentsApiEntryPoints]
+apiSourceFiles = ["//src/components/%s:source-files" % name for name in componentsApiEntryPoints]
 
 exports_files([
     "bazel-tsconfig-build.json",
@@ -42,8 +34,6 @@ dgeni_api_docs(
         "@npm//@angular/platform-browser",
     ],
     entry_points = {
-        "cdk": cdkApiEntryPoints,
-        "material": materialApiEntryPoints,
         "components": componentsApiEntryPoints
     },
     tags = ["docs-package"],

@@ -976,8 +976,8 @@
     nunjucks "^2.4.2"
 
 "@gsa-sam/components-examples@GSA/sds-docs-content#master":
-  version "9.0.0-rc.3"
-  resolved "https://codeload.github.com/GSA/sds-docs-content/tar.gz/c7accea877fda3b2e21273846e3ed134c2da7d28"
+  version "1.0.0-beta.0"
+  resolved "https://codeload.github.com/GSA/sds-docs-content/tar.gz/5727fa246b00e30e0ef8129197fda6194c455c0b"
 
 "@gsa-sam/components@1.0.0-beta.0":
   version "1.0.0-beta.0"

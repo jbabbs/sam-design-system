@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
 import {SdsFooterModule} from '@gsa-sam/components/footer';
-import {FooterOverviewExample} from './footer-overview/footer-overview-example';
+import {FooterOverviewExample} from './overview/footer-overview-example';
 
 export {
   FooterOverviewExample,
@@ -12,6 +13,7 @@ const EXAMPLES = [
 
 @NgModule({
   imports: [
+    CommonModule,
     SdsFooterModule
   ],
   declarations: EXAMPLES,

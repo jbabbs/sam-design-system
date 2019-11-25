@@ -11,6 +11,7 @@ ng_module(
     ]),
     module_name = "@gsa-sam/components-examples/components/footer",
     deps = [
+        "//src/components/core",
         "//src/components/footer",
     ],
 )

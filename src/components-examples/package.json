@@ -34,6 +34,7 @@
     "@angular/material": "0.0.0-PLACEHOLDER",
     "@angular/material-experimental": "0.0.0-PLACEHOLDER",
     "@angular/material-moment-adapter": "0.0.0-PLACEHOLDER",
+    "@gsa-sam/components": "0.0.0-PLACEHOLDER",
     "tslib": "^1.9.0"
   }
 }

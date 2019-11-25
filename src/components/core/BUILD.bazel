@@ -2,6 +2,7 @@ package(default_visibility = ["//visibility:public"])
 
 load(
     "//tools:defaults.bzl",
+    "markdown_to_html",
     "ng_module",
 )
 
@@ -14,6 +15,11 @@ ng_module(
     assets = [],
     module_name = "@gsa-sam/components/core",
     deps = [],
+)
+
+markdown_to_html(
+    name = "overview",
+    srcs = ["common-behaviors/nav.md"],
 )
 
 filegroup(

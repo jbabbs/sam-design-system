@@ -1,4 +1,5 @@
 entryPoints = [
+    "core",
     "footer",
 ]
 
