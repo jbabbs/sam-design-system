@@ -1,3 +1,10 @@
+## Dev Environment
+
+- [Install Bazel](https://docs.bazel.build/versions/master/install.html)
+- run `yarn`
+
+---
+
 ## Creating Examples
 
 Follow the example found in:
@@ -13,6 +20,8 @@ then declare new example here
 
 ### Push docs content to repo
 `./scripts/deploy/publish-docs-content.sh --no-build`
+
+To push content you'll need `SDS_BUILDS_TOKEN` declared in your exported paths - this is similar to gren installation
 
 ---
 
@@ -30,3 +39,9 @@ If a new version of @gsa-sam/components has been published, update docs-site pac
 `yarn build`
 
 This will create a `dist/releases` folder with the components package you can `cd` in to this directory and publish to npm (`npm publish`)
+
+---
+
+## IMPORTANT
+
+The scripts and tools folder were copied from material repo - review these folders and only keep folder/files that will be needed for this project.
