@@ -1,4 +1,4 @@
-<span class="sds-accordion__title">
-  <ng-content></ng-content>
-  <span class="sds-accordion__icon"></span>
+<span class="sds-accordion__title" style="min-height:30px;">
+  <ng-content *ngIf="hasTitle"></ng-content>
+  <span *ngIf="hasIcon" class="sds-accordion__icon" ></span>
 </span>

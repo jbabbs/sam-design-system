@@ -18,6 +18,7 @@ import { SdsAccordionItemComponent } from "./accordion-item.component";
   templateUrl: "accordion-item-header.component.html",
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
+  inputs: ['hasTitle', 'hasIcon'],
   host: {
     class: "sds-accordion__trigger",
     role: "button",
@@ -31,15 +32,15 @@ import { SdsAccordionItemComponent } from "./accordion-item.component";
   }
 })
 export class SdsAccordionItemHeaderComponent implements OnDestroy, FocusableOption {
+  public hasTitle = true;
+  public hasIcon = true;
   private _parentChangeSubscription = Subscription.EMPTY;
-
   constructor(
     @Host() public accordionItem: SdsAccordionItemComponent,
     private _element: ElementRef,
     private _focusMonitor: FocusMonitor,
     private _changeDetectorRef: ChangeDetectorRef
   ) {
-
     // Since the toggle state depends on an @Input on the accordion item, we
     // need to subscribe and trigger change detection manually.
     this._parentChangeSubscription = merge(

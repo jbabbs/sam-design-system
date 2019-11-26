@@ -10,7 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 
 export class SideNavigationSampleComponent implements AfterViewInit, OnInit {
 
-
+  public hasTitle  = false;
+  public hasIcon = true;
   public pageHeader: string;
   public linkEvent = new BehaviorSubject<object>(null);
   sideNavExpanded = true;
