@@ -1,11 +1,11 @@
 {
   "name": "components-srcs",
-  "description": "Material Design components for Angular",
-  "homepage": "https://github.com/angular/components",
-  "bugs": "https://github.com/angular/components/issues",
+  "description": "Components for SAM.gov",
+  "homepage": "https://github.com/GSA/sam-design-system",
+  "bugs": "https://github.com/GSA/sam-design-system/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/angular/components.git"
+    "url": "https://github.com/GSA/sam-design-system.git"
   },
   "license": "MIT",
   "engines": {
@@ -14,31 +14,7 @@
   },
   "scripts": {
     "postinstall": "node --preserve-symlinks --preserve-symlinks-main tools/bazel/postinstall-patches.js && ngcc --properties main --create-ivy-entry-points",
-    "build": "node ./scripts/build-packages-dist.js",
-    "bazel:buildifier": "find . -type f \\( -name \"*.bzl\" -or -name WORKSPACE -or -name BUILD -or -name BUILD.bazel \\) ! -path \"*/node_modules/*\" | xargs buildifier -v --warnings=attr-cfg,attr-license,attr-non-empty,attr-output-default,attr-single-file,constant-glob,ctx-args,depset-iteration,depset-union,dict-concatenation,duplicated-name,filetype,git-repository,http-archive,integer-division,load,load-on-top,native-build,native-package,output-group,package-name,package-on-top,redefined-variable,repository-name,same-origin-load,string-iteration,unused-variable,unsorted-dict-items,out-of-order-load",
-    "bazel:format-lint": "yarn -s bazel:buildifier --lint=warn --mode=check",
-    "dev-app": "ibazel run //src/dev-app:devserver",
-    "test": "bazel test //src/... --test_tag_filters=-e2e,-browser:firefox-local --build_tag_filters=-browser:firefox-local --build_tests_only",
-    "test-firefox": "bazel test //src/... --test_tag_filters=-e2e,-browser:chromium-local --build_tag_filters=-browser:chromium-local --build_tests_only",
-    "lint": "yarn -s tslint && yarn -s bazel:format-lint && yarn -s ownerslint",
-    "e2e": "bazel test //src/... --test_tag_filters=e2e",
-    "deploy": "echo 'Not supported yet. Tracked with COMP-230'",
-    "webdriver-manager": "webdriver-manager",
-    "breaking-changes": "ts-node --project scripts scripts/breaking-changes.ts",
-    "gulp": "gulp",
-    "stage-release": "ts-node --project tools/release/ tools/release/stage-release.ts",
-    "publish-release": "ts-node --project tools/release/ tools/release/publish-release.ts",
-    "check-release-output": "ts-node --project tools/release tools/release/check-release-output.ts",
-    "changelog": "ts-node --project tools/release tools/release/changelog.ts",
-    "preinstall": "node ./tools/npm/check-npm.js",
-    "format:ts": "git-clang-format HEAD $(git diff HEAD --name-only | grep -v \"\\.d\\.ts\")",
-    "format:bazel": "yarn -s bazel:buildifier --lint=fix --mode=fix",
-    "format": "yarn -s format:ts && yarn -s format:bazel",
-    "cherry-pick-patch": "ts-node --project tools/cherry-pick-patch/ tools/cherry-pick-patch/cherry-pick-patch.ts",
-    "check-rollup-globals": "ts-node --project scripts/ scripts/check-rollup-globals.ts",
-    "ownerslint": "ts-node --project scripts/ scripts/ownerslint.ts",
-    "tslint": "tslint -c tslint.json --project ./tsconfig.json",
-    "stylelint": "stylelint \"src/**/*.+(css|scss)\" --config .stylelintrc.json --syntax scss"
+    "build": "node ./scripts/build-packages-dist.js"
   },
   "version": "1.0.0-beta.0",
   "dependencies": {

@@ -20,14 +20,6 @@
     "types": ["jasmine"],
     "baseUrl": ".",
     "paths": {
-      "@angular/cdk": ["./src/cdk"],
-      "@angular/cdk/*": ["./src/cdk/*"],
-      "@angular/material/*": ["./src/material/*"],
-      "@angular/material-experimental/*": ["./src/material-experimental/*"],
-      "@angular/material-experimental": ["./src/material-experimental"],
-      "@angular/cdk-experimental/*": ["./src/cdk-experimental/*"],
-      "@angular/cdk-experimental": ["./src/cdk-experimental"],
-      "@angular/material-moment-adapter": ["./src/material-moment-adapter"],
       "@gsa-sam/components-examples": ["./src/components-examples"],
       "@gsa-sam/components-examples/*": ["./src/components-examples/*"],
       "@gsa-sam/components/*": ["./src/components/*"]
@@ -35,26 +27,14 @@
   },
   "include": [
     "src/**/*.ts",
-    "e2e/**/*.ts",
-    "test/**/*.ts",
     "tools/**/*.ts"
   ],
   "exclude": [
-    // Exclude files that depend on Node APIs because those depend on the Node types and therefore
-    // cause ambiguous imports. For example `setTimeout()` will return a Timer instead of a number.
-    "./src/universal-app/prerender.ts",
-
     // Exclude the API goldens in order to not slow-down IDE's using this tsconfig file
     "tools/public_api_guard/**/*.d.ts",
 
     // IDEs should not type-check the different node_modules directories of the different packages.
     // This would cause the IDEs to be slower and also linters would check the node_modules.
-    "node_modules/",
-
-    // Exclude schematic template files and test cases which aren't valid TS files.
-    "src/material/schematics/ng-generate/*/files/**/*",
-    "src/cdk/schematics/ng-generate/*/files/**/*",
-    "src/cdk/schematics/ng-update/test-cases/**/*",
-    "src/material/schematics/ng-update/test-cases/**/*"
+    "node_modules/"
   ]
 }
