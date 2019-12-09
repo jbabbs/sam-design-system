@@ -6,6 +6,5 @@
  * found in the LICENSE file at [LINK TO LICENSE]
  */
 
-export * from '@gsa-sam/components/core';
-export * from '@gsa-sam/components/footer';
-export * from '@gsa-sam/componens/action-menu';
+export * from './actions-menu.module';
+export * from './actions-menu.component';

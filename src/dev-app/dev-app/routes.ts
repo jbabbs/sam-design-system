@@ -13,5 +13,7 @@ import {DevAppHome} from './dev-app-home';
 export const DEV_APP_ROUTES: Routes = [
   {path: '', component: DevAppHome},
   {path: 'footer', loadChildren: 'footer/footer-demo-module#FooterDemoModule'},
+  {path: 'action-menu',
+    loadChildren: 'action-menu/action-menu-sample-module#ActionsMenuSampleModule'},
   {path: '**', component: DevApp404},
 ];
