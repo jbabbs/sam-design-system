@@ -19,7 +19,7 @@ export class ActionsMenuDemoComponent {
     ]
   };
 
-  log(value) {
+  log(value: any) {
     console.log(`%cLog: ${value}`, 'color: blue; font-weight: bold');
   }
 }

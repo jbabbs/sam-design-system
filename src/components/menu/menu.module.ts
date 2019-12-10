@@ -1,26 +1,24 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+import {CommonModule} from '@angular/common';
+import {NgModule} from '@angular/core';
+import {SdsMenuHeaderComponent} from './menu-header.component';
+import {SdsMenuItemComponent} from './menu-item.component';
+import {SdsMenuTriggerForDirective} from './menu-trigger.directive';
+import {SdsMenuComponent} from './menu.component';
 import {OverlayModule} from '@angular/cdk/overlay';
-import { SdsMenuComponent } from './menu.component';
-import { SdsMenuItemComponent } from './menu-item.component';
-import { SdsMenuTriggerForDirective } from './menu-trigger.directive';
-import { SdsMenuHeaderComponent } from './menu-header.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+
+// import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
-  imports: [CommonModule, OverlayModule, FontAwesomeModule],
-  exports: [
-    SdsMenuComponent,
-    SdsMenuItemComponent,
-    SdsMenuTriggerForDirective,
-    SdsMenuHeaderComponent
+  imports: [
+    CommonModule, OverlayModule,
+    //  FontAwesomeModule
   ],
-  declarations: [
-    SdsMenuComponent,
-    SdsMenuItemComponent,
-    SdsMenuTriggerForDirective,
-    SdsMenuHeaderComponent
-  ],
+  exports:
+      [SdsMenuComponent, SdsMenuItemComponent, SdsMenuTriggerForDirective, SdsMenuHeaderComponent],
+  declarations:
+      [SdsMenuComponent, SdsMenuItemComponent, SdsMenuTriggerForDirective, SdsMenuHeaderComponent],
   providers: []
 })
-export class SdsMenuModule {}
+export class SdsMenuModule {
+}

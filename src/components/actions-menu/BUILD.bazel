@@ -27,9 +27,9 @@ ng_module(
         "@npm//@angular/forms",
         "@npm//@angular/router",
         "@npm//@fortawesome/angular-fontawesome",
-         "@npm//@fortawesome/fontawesome-svg-core",
+        "@npm//@fortawesome/fontawesome-svg-core",
         "@npm//@fortawesome/free-solid-svg-icons",
-          "@npm//@angular/animations",
+        "@npm//@angular/animations",
        
 
     ],

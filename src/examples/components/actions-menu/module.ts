@@ -1,7 +1,8 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {SdsFooterModule} from '@gsa-sam/components/footer';
-import {ActionsMenuSampleComponent} from './overview/actions-menu.component';
+import {SdsActionsMenuModule} from '@gsa-sam/components/actions-menu';
+import {SdsMenuModule} from '@gsa-sam/components/menu';
+import {ActionsMenuSampleComponent} from './overview/actions-menu-sample.component';
 
 export {
   ActionsMenuSampleComponent,
@@ -14,10 +15,11 @@ const EXAMPLES = [
 @NgModule({
   imports: [
     CommonModule,
-    SdsFooterModule
+    SdsActionsMenuModule,
+    SdsMenuModule
   ],
   declarations: EXAMPLES,
   exports: EXAMPLES,
 })
-export class FooterExamplesModule {
+export class FActionMenuExamplesModule {
 }
