@@ -21,6 +21,7 @@ var MATERIAL_PACKAGES = [
 var COMPONENTS_PACKAGES = [
   'core',
   'footer',
+  'actions-menu'
 ];
 
 /** Bazel runfile path referring to the "src/" folder of the project. */

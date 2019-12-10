@@ -22,6 +22,8 @@ ng_module(
     module_name = "@gsa-sam/components",
     deps = ["//src/components/%s" % p for p in COMPONENTS_PACKAGES] + [
         "@npm//@angular/forms",
+        
+        
     ],
 )
 

@@ -4,13 +4,13 @@ load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
 load("//tools:defaults.bzl", "ng_module")
 
 ng_module(
-    name = "action-menu",
+    name = "actions-menu",
     srcs = glob(["**/*.ts"]),
     assets = [
-        "action-menu-sample.html",
+        "actions-menu.component.html",
     ],
     deps = [
-        "//src/components/action-menu",
+        "//src/components/actions-menu",
         "@npm//@angular/forms",
         "@npm//@angular/router",
     ],

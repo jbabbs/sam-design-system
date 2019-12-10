@@ -5,7 +5,7 @@ import { Component, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: 'actions-menu.component.html'
 })
 export class SdsActionsMenuComponent {
-  @Input() model;
+  @Input() model: any;
   @Input() size: string;
   @Output() clicks = new EventEmitter<string>();
   constructor() {}

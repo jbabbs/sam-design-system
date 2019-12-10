@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {SdsFooterModule} from '@gsa-sam/components/footer';
-import {ActionsMenuSampleComponent} from './overview/actions-menu-sample.component';
+import {ActionsMenuSampleComponent} from './overview/actions-menu.component';
 
 export {
   ActionsMenuSampleComponent,

@@ -12,26 +12,24 @@ load(
 
 
 ng_module(
-    name = "actions-menu",
+    name = "menu",
     srcs = glob(
         ["**/*.ts"],
         exclude = ["**/*.spec.ts"],
     ),
     assets = glob(["**/*.html"]),
-    module_name = "@gsa-sam/components/actions-menu",
+    module_name = "@gsa-sam/components/menu",
     deps = [
         "//src/components/core",
-         "//src/components/menu",
         "@npm//@angular/common",
         "@npm//@angular/core",
         "@npm//@angular/forms",
         "@npm//@angular/router",
-        "@npm//@fortawesome/angular-fontawesome",
-         "@npm//@fortawesome/fontawesome-svg-core",
-        "@npm//@fortawesome/free-solid-svg-icons",
-          "@npm//@angular/animations",
        
-
+        "@npm//@angular/cdk",
+        "@npm//@angular/animations",
+       
+   
     ],
 )
 
@@ -46,6 +44,8 @@ ng_test_library(
         "//src/components/core",
         "@npm//@angular/platform-browser",
         "@npm//@angular/router",
+          "@npm//@angular/cdk",
+        "@npm//@angular/animations"
     ],
 )
 

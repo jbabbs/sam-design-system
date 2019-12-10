@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'sds-actions-menu-sample',
-  templateUrl: 'actions-menu-sample.component.html'
+  selector: 'sds-actions-menu-demo',
+  templateUrl: 'actions-menu.component.html'
 })
 export class ActionsMenuSampleComponent {
   constructor() {}

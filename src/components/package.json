@@ -26,7 +26,9 @@
     "@angular/common": "0.0.0-NG",
     "@angular/forms": "0.0.0-NG",
     "@angular/animations": "0.0.0-NG",
-    "@angular/cdk": "0.0.0-NG"
+    "@angular/cdk": "0.0.0-NG",
+
+ 
   },
   "dependencies": {
     "tslib": "^1.7.1"
