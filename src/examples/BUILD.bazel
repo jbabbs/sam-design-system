@@ -7,6 +7,7 @@ load("//tools/package-docs-content:index.bzl", "package_docs_content")
 
 EXAMPLE_PACKAGES = [
     "//src/examples/components/footer",
+     "//src/examples/formly/input",
 ]
 
 ng_module(
@@ -36,6 +37,7 @@ package_docs_content(
 
         # Package the overviews for "@gsa-sam/components" into the docs content
         "//src/components:overviews": "overviews/components",
+        "//src/formly:overviews": "overviews/formly",
 
         # Package the API docs for the Components package into the docs-content
         "//src:api-docs": "api-docs",

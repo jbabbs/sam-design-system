@@ -1,0 +1,42 @@
+{
+  "name": "@gsa-sam/formly",
+  "version": "0.0.0-PLACEHOLDER",
+  "description": "SDS Formly",
+  "main": "./bundles/formly.umd.js",
+  "module": "./esm5/formly.es5.js",
+  "es2015": "./esm2015/formly.js",
+  "typings": "./formly.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/GSA/sam-design-system.git"
+  },
+  "keywords": [
+    "angular",
+    "sds",
+    "sam design system",
+    "formly"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/GSA/sam-design-system/issues"
+  },
+  "homepage": "https://github.com/GSA/sam-design-system#readme",
+  "peerDependencies": {
+    "@angular/core": "0.0.0-NG",
+    "@angular/common": "0.0.0-NG",
+    "@angular/forms": "0.0.0-NG",
+    "@angular/animations": "0.0.0-NG",
+    "@angular/cdk": "0.0.0-NG",
+    "@ngx-formly/core": "0.0.0-FORMLY-VERSION",
+    "@fortawesome/angular-fontawesome": "^0.3.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.17",
+    "@fortawesome/free-solid-svg-icons": "^5.8.1",
+    "@angular/material": "7.3.7"
+
+  },
+  "dependencies": {
+    "tslib": "^1.7.1"
+  },
+  "sideEffects": false
+}
+
