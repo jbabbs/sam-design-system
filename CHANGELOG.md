@@ -1,3 +1,23 @@
+# 1.0.0-beta.4 "Beta 4" (2019-12-11)
+
+### components
+
+|            |                       |
+| ---------- | --------------------- |
+| bug fix |  **build:** entry point name bug ([38b7155](https://github.com/GSA/sam-design-system/commit/38b7155)) |
+
+
+# 1.0.0-beta.3 "Beta 3" (2019-12-11)
+
+### components
+
+|            |                       |
+| ---------- | --------------------- |
+| bug fix |  **build:** importAs bug ([6788525](https://github.com/GSA/sam-design-system/commit/6788525)) |
+| bug fix |  publish docs content package version script ([73ee767](https://github.com/GSA/sam-design-system/commit/73ee767)) |
+| bug fix |  publish docs content script ([abda859](https://github.com/GSA/sam-design-system/commit/abda859)) |
+
+
 # 1.0.0-beta.2 "Beta 2" (2019-12-08)
 
 ### components

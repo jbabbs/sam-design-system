@@ -8,6 +8,7 @@ load("//tools/package-docs-content:index.bzl", "package_docs_content")
 EXAMPLE_PACKAGES = [
     "//src/examples/components/footer",
      "//src/examples/formly/input",
+    "//src/sds-examples/components/footer",
 ]
 
 ng_module(
