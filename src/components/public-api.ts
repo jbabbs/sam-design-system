@@ -8,5 +8,5 @@
 
 export * from '@gsa-sam/components/core';
 export * from '@gsa-sam/components/footer';
-export * from '@gsa-sam/components/actions-menu';
 export * from '@gsa-sam/components/menu';
+export * from '@gsa-sam/components/actions-menu';

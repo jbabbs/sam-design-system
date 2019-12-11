@@ -55,6 +55,7 @@ export class PackageBundler {
     const entryFile = join(this._buildPackage.outputDir, entryPointName, 'index.js');
     const esm5EntryFile = join(this._buildPackage.esm5OutputDir, entryPointName, 'index.js');
 
+    console.log(packageName);
     return this._bundleEntryPoint({
       entryFile,
       esm5EntryFile,

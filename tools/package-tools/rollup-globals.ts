@@ -58,6 +58,7 @@ const componentsSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.pac
 const rollupComponentsEntryPoints =
     generateRollupEntryPointsSDS('components', componentsSecondaryEntryPoints);
 
+console.log(rollupComponentsEntryPoints);
 /** Object with all cdk entry points in the format of Rollup globals. */
 // const rollupCdkEntryPoints = generateRollupEntryPoints('cdk', cdkSecondaryEntryPoints);
 

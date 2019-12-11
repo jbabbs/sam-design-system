@@ -27,8 +27,6 @@ ng_module(
         "@npm//@angular/router",
         "@npm//@angular/cdk",
         "@npm//@angular/animations",
-       
-   
     ],
 )
 

@@ -19,6 +19,8 @@ export async function compileEntryPoint(buildPackage: BuildPackage, tsconfigName
     ngcFlags.push('--outDir', es5OutputPath, '--target', 'ES5');
   }
 
+  console.log(entryPointPath);
+  console.log(ngcFlags);
   return tsCompile('ngc', ngcFlags).catch(() => {
     const error = chalk.red(
         `Failed to compile ${secondaryEntryPoint} using ${entryPointTsconfigPath}`);

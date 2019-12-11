@@ -21,7 +21,7 @@ ng_module(
     module_name = "@gsa-sam/components/actions-menu",
     deps = [
         "//src/components/core",
-         "//src/components/menu",
+        "//src/components/menu",
         "@npm//@angular/common",
         "@npm//@angular/core",
         "@npm//@angular/forms",
@@ -30,8 +30,6 @@ ng_module(
         "@npm//@fortawesome/fontawesome-svg-core",
         "@npm//@fortawesome/free-solid-svg-icons",
         "@npm//@angular/animations",
-       
-
     ],
 )
 

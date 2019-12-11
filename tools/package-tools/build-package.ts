@@ -69,6 +69,7 @@ export class BuildPackage {
     // Depth 0: coercion, platform, keycodes, bidi
     // Depth 1: a11y, scrolling
     // Depth 2: overlay
+    console.log(this.secondaryEntryPointsByDepth);
     for (const entryPointGroup of this.secondaryEntryPointsByDepth) {
       await Promise.all(entryPointGroup.map(p => this._compileBothTargets(p)));
     }

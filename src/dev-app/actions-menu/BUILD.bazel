@@ -10,6 +10,7 @@ ng_module(
         "actions-menu.component.html",
     ],
     deps = [
+        "//src/components/menu",
         "//src/components/actions-menu",
         "@npm//@angular/forms",
         "@npm//@angular/router",
