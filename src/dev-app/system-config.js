@@ -21,6 +21,7 @@ var MATERIAL_PACKAGES = [
 var COMPONENTS_PACKAGES = [
   'core',
   'footer',
+  'menu',
   'actions-menu'  
 ];
 
