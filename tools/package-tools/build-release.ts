@@ -134,6 +134,7 @@ function copySecondaryEntryPointStylesheets(buildPackage: BuildPackage, releaseP
 /** List of released package names under `src`. */
 const packageDirs: string[] = [
   'components',
+  'layouts',
 ];
 
 /**
