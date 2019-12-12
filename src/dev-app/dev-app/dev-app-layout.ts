@@ -24,6 +24,7 @@ export class DevAppLayout {
   dark = false;
   navItems = [
     {name: 'Footer', route: '/footer'},
+    {name: 'Actions Menu', route: '/actions-menu'},
   ];
 
   constructor(
