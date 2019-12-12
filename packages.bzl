@@ -3,6 +3,7 @@
 COMPONENTS_PACKAGES = [
     "core",
     'footer',
+    'menu',
 ]
 
 CDK_PACKAGES = [
