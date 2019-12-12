@@ -3,9 +3,11 @@ import {createPackageBuildTasks, sequenceTask} from 'material2-build-tools';
 import {
   allBuildPackages,
   componentsPackage,
+  layoutsPackage,
 } from './packages';
 
 createPackageBuildTasks(componentsPackage);
+createPackageBuildTasks(layoutsPackage);
 
 import '../../tools/gulp/tasks/ci';
 import '../../tools/gulp/tasks/clean';
