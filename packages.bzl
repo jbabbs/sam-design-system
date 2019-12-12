@@ -6,6 +6,10 @@ COMPONENTS_PACKAGES = [
     'menu',
 ]
 
+LAYOUTS_PACKAGES = [
+    "actions-menu",
+]
+
 CDK_PACKAGES = [
     "a11y",
     "accordion",
@@ -25,6 +29,8 @@ CDK_PACKAGES = [
     "text-field",
     "tree",
 ]
+
+LAYOUTS_TARGETS = ["//src/layouts:layouts"] + ["//src/layouts/%s" % p for p in LAYOUTS_PACKAGES]
 
 CDK_TARGETS = ["//src/cdk"] + ["//src/cdk/%s" % p for p in CDK_PACKAGES]
 
@@ -158,6 +164,11 @@ ROLLUP_GLOBALS.update({
     for p in COMPONENTS_PACKAGES
 })
 
+ROLLUP_GLOBALS.update({
+    "@gsa-sam/layouts/%s" % p: "sds.layouts.%s" % p
+    for p in LAYOUTS_PACKAGES
+})
+
 # Rollup globals for material experimental subpackages, e.g.,
 # {"@angular/material-experimental/list": "ng.materialExperimental.list"}
 ROLLUP_GLOBALS.update({
@@ -184,6 +195,10 @@ ROLLUP_GLOBALS.update({
 ROLLUP_GLOBALS.update({
     "@gsa-sam/sds-examples/components/%s" % p: "sds.sdsExamples.components.%s" % p
     for p in COMPONENTS_PACKAGES
+})
+ROLLUP_GLOBALS.update({
+    "@gsa-sam/sds-examples/layouts/%s" % p: "sds.sdsExamples.layouts.%s" % p
+    for p in LAYOUTS_PACKAGES
 })
 ROLLUP_GLOBALS.update({
     "@angular/material-examples/material-experimental/%s" % p: "ng.materialExamples.materialExperimental.%s" % p
