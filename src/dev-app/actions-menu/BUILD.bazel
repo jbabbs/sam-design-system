@@ -1,0 +1,25 @@
+package(default_visibility = ["//visibility:public"])
+
+load("@io_bazel_rules_sass//:defs.bzl", "sass_binary")
+load("//tools:defaults.bzl", "ng_module")
+
+ng_module(
+    name = "actions-menu",
+    srcs = glob(["**/*.ts"]),
+    assets = [
+        "actions-menu-demo.html",
+    ],
+    deps = [
+        "//src/components/menu",
+        "//src/layouts/actions-menu",
+        "@npm//@angular/forms",
+        "@npm//@angular/router",
+        "@npm//@angular/core",
+        "@npm//@angular/common",
+    ],
+)
+
+sass_binary(
+    name = "actions_menu_demo_scss",
+    src = "actions-menu-demo.scss",
+)
