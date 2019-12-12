@@ -18,7 +18,8 @@
     "types": []
   },
   "include": [
-    "node_modules/@angular/**/*"
+    "node_modules/@angular/**/*",
+    "node_modules/@fortawesome/**/*"
   ],
   "exclude": [
     "node_modules/@angular/bazel/**",
