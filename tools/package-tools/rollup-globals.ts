@@ -10,75 +10,22 @@ export const dashCaseToCamelCase =
 function generateRollupEntryPoints(packageName: string, entryPoints: string[]):
     {[k: string]: string} {
   return entryPoints.reduce((globals: {[k: string]: string}, entryPoint: string) => {
-    globals[`@angular/${packageName}/${entryPoint}`] =
-        `ng.${dashCaseToCamelCase(packageName)}.${dashCaseToCamelCase(entryPoint)}`;
-    return globals;
-  }, {});
-}
-
-// SDS MODIFICATION
-/** Generates rollup entry point mappings for the given package and entry points. */
-function generateRollupEntryPointsSDS(packageName: string, entryPoints: string[]):
-    {[k: string]: string} {
-  return entryPoints.reduce((globals: {[k: string]: string}, entryPoint: string) => {
     globals[`@gsa-sam/${packageName}/${entryPoint}`] =
         `sds.${dashCaseToCamelCase(packageName)}.${dashCaseToCamelCase(entryPoint)}`;
     return globals;
   }, {});
 }
 
-// SDS MODIFICATION
 /** List of potential secondary entry-points for the cdk package. */
 const componentsSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDir, 'components'));
+const layoutsSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDir, 'layouts'));
 
-/** List of potential secondary entry-points for the cdk package. */
-// const cdkSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDir, 'cdk'));
-
-/** List of potential secondary entry-points for the material package. */
-// const matSecondaryEntryPoints = getSubdirectoryNames(join(buildConfig.packagesDir, 'material'));
-
-/** List of potential secondary entry-points for the google-maps package. */
-// const googleMapsSecondaryEntryPoints =
-//     getSubdirectoryNames(join(buildConfig.packagesDir, 'google-maps'));
-
-/** List of potential secondary entry-points for the cdk-experimental package. */
-// const cdkExperimentalSecondaryEntryPoints =
-//     getSubdirectoryNames(join(buildConfig.packagesDir, 'cdk-experimental'));
-
-/** List of potential secondary entry-points for the material-experimental package. */
-// const materialExperimentalSecondaryEntryPoints =
-//     getSubdirectoryNames(join(buildConfig.packagesDir, 'material-experimental'));
-
-/** List of potential secondary entry points for the youtube-player package. */
-// const youTubePlayerSecondaryEntryPoints =
-//     getSubdirectoryNames(join(buildConfig.packagesDir, 'youtube-player'));
-
-// SDS MODIFICATION
-/** Object with all cdk entry points in the format of Rollup globals. */
+/** Object with all entry points in the format of Rollup globals. */
 const rollupComponentsEntryPoints =
-    generateRollupEntryPointsSDS('components', componentsSecondaryEntryPoints);
+  generateRollupEntryPoints('components', componentsSecondaryEntryPoints);
 
-/** Object with all cdk entry points in the format of Rollup globals. */
-// const rollupCdkEntryPoints = generateRollupEntryPoints('cdk', cdkSecondaryEntryPoints);
-
-/** Object with all material entry points in the format of Rollup globals. */
-// const rollupMatEntryPoints = generateRollupEntryPoints('material', matSecondaryEntryPoints);
-
-/** Object with all google-maps entry points in the format of Rollup globals. */
-// const rollupGoogleMapsEntryPoints =
-//     generateRollupEntryPoints('google-maps', googleMapsSecondaryEntryPoints);
-
-/** Object with all material-experimental entry points in the format of Rollup globals. */
-// const rollupMaterialExperimentalEntryPoints =
-//     generateRollupEntryPoints('material-experimental', materialExperimentalSecondaryEntryPoints);
-
-/** Object with all youtube-player entry points in the format of Rollup globals. */
-// const rollupYouTubePlayerEntryPoints =
-//     generateRollupEntryPoints('youtube-player', youTubePlayerSecondaryEntryPoints);
-
-/** Object with all cdk-experimental entry points in the format of Rollup globals. */
-// const rollupCdkExperimentalEntryPoints =
-//     generateRollupEntryPoints('cdk-experimental', cdkExperimentalSecondaryEntryPoints);
+const rollupLayoutsEntryPoints =
+  generateRollupEntryPoints('layouts', layoutsSecondaryEntryPoints);
 
 /** Map of globals that are used inside of the different packages. */
 export const rollupGlobals = {
@@ -86,38 +33,6 @@ export const rollupGlobals = {
   'protractor': 'protractor',
   'selenium-webdriver': 'selenium-webdriver',
   'tslib': 'tslib',
-
-  // MDC Web
-  '@material/animation': 'mdc.animation',
-  '@material/auto-init': 'mdc.autoInit',
-  '@material/base': 'mdc.base',
-  '@material/checkbox': 'mdc.checkbox',
-  '@material/chips': 'mdc.chips',
-  '@material/dialog': 'mdc.dialog',
-  '@material/dom': 'mdc.dom',
-  '@material/drawer': 'mdc.drawer',
-  '@material/floating-label': 'mdc.floatingLabel',
-  '@material/form-field': 'mdc.formField',
-  '@material/grid-list': 'mdc.gridList',
-  '@material/icon-button': 'mdc.iconButton',
-  '@material/line-ripple': 'mdc.lineRipple',
-  '@material/linear-progress': 'mdc.linearProgress',
-  '@material/list': 'mdc.list',
-  '@material/menu': 'mdc.menu',
-  '@material/menu-surface': 'mdc.menuSurface',
-  '@material/notched-outline': 'mdc.notchedOutline',
-  '@material/radio': 'mdc.radio',
-  '@material/ripple': 'mdc.ripple',
-  '@material/select': 'mdc.select',
-  '@material/slider': 'mdc.slider',
-  '@material/snackbar': 'mdc.snackbar',
-  '@material/switch': 'mdc.switch',
-  '@material/tab': 'mdc.tab',
-  '@material/tab-bar': 'mdc.tabBar',
-  '@material/tab-indicator': 'mdc.tabIndicator',
-  '@material/tab-scroller': 'mdc.tabScroller',
-  '@material/text-field': 'mdc.textField',
-  '@material/top-app-bar': 'mdc.topAppBar',
 
   '@angular/animations': 'ng.animations',
   '@angular/common': 'ng.common',
@@ -134,34 +49,29 @@ export const rollupGlobals = {
   '@angular/platform-server': 'ng.platformServer',
   '@angular/router': 'ng.router',
 
-  // Some packages are not really needed for the UMD bundles, but for the missingRollupGlobals rule.
+  // CDK
   '@angular/cdk': 'ng.cdk',
-  '@angular/cdk-experimental': 'ng.cdkExperimental',
-  '@angular/material': 'ng.material',
-  '@angular/material-examples': 'ng.materialExamples',
-  '@angular/material-experimental': 'ng.materialExperimental',
-  '@angular/material-moment-adapter': 'ng.materialMomentAdapter',
+  '@angular/cdk/a11y': 'ng.cdk.a11y',
+  '@angular/cdk/coercion': 'ng.cdk.coercion',
+  '@angular/cdk/keycodes': 'ng.cdk.keycodes',
+  '@angular/cdk/overlay': 'ng.cdk.overlay',
+  '@angular/cdk/portal': 'ng.cdk.portal',
+  '@angular/cdk/platform': 'ng.cdk.platform',
 
-  // Miscellaneous components
-  '@angular/google-maps': 'ng.googleMaps',
-  '@angular/youtube-player': 'ng.youtubePlayer',
+  // Material
+  '@angular/material': 'ng.material',
+
+  // FontAwesome
+  '@fortawesome/angular-fontawesome': 'fortawesome.angular-fontawesome',
+  '@fortawesome/free-solid-svg-icons': 'fortawesome.free-solid-svg-icons',
 
   // SDS MODIFICATION
   '@gsa-sam/sds-examples': 'sds.sdsExamples',
   '@gsa-sam/components': 'sds.components',
 
-  // Include secondary entry-points of the cdk and material packages
-  // ...rollupCdkEntryPoints,
-  // ...rollupMatEntryPoints,
-  // ...rollupCdkExperimentalEntryPoints,
-  // ...rollupMaterialExperimentalEntryPoints,
-  // ...rollupYouTubePlayerEntryPoints,
-  // ...rollupGoogleMapsEntryPoints,
-  // SDS MODIFICATION
+  // Include secondary entry-points of the components and layouts packages
   ...rollupComponentsEntryPoints,
-
-  '@angular/cdk/private/testing': 'ng.cdk.private.testing',
-  '@angular/cdk/private/testing/e2e': 'ng.cdk.private.testing.e2e',
+  ...rollupLayoutsEntryPoints,
 
   'rxjs': 'rxjs',
   'rxjs/operators': 'rxjs.operators',
