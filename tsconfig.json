@@ -20,15 +20,6 @@
     "types": ["jasmine"],
     "baseUrl": ".",
     "paths": {
-      "@angular/cdk": ["./src/cdk"],
-      "@angular/cdk/*": ["./src/cdk/*"],
-      "@angular/material/*": ["./src/material/*"],
-      "@angular/material-experimental/*": ["./src/material-experimental/*"],
-      "@angular/material-experimental": ["./src/material-experimental"],
-      "@angular/cdk-experimental/*": ["./src/cdk-experimental/*"],
-      "@angular/cdk-experimental": ["./src/cdk-experimental"],
-      "@angular/material-moment-adapter": ["./src/material-moment-adapter"],
-      "@angular/material-examples": ["./src/packages/material-examples"],
       "@gsa-sam/components/*": ["./src/components/*"]
     }
   },

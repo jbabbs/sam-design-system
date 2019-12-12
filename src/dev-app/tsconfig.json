@@ -8,6 +8,7 @@
     "baseUrl": ".",
     "paths": {
       "@gsa-sam/components/*": ["../components/*"],
+      "@gsa-sam/layouts/*": ["../layouts/*"],
     }
   },
   "include": ["./**/*.ts"]

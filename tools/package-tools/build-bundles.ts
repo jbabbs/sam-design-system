@@ -136,7 +136,7 @@ export class PackageBundler {
     };
 
     const writeOptions = {
-      name: config.moduleName || 'ng.material',
+      name: config.moduleName || 'sds.components',
       amd: {id: config.importName},
       banner: buildConfig.licenseBanner,
       format: config.format,
