@@ -1,0 +1,14 @@
+// Configuration for IDEs only.
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "rootDir": "..",
+    "baseUrl": ".",
+    "paths": {
+      "@gsa-sam/components": ["../components"],
+      "@gsa-sam/components/*": ["../components/*"],
+      "@gsa-sam/layouts/*": ["./*"]
+    }
+  },
+  "include": ["./**/*.ts"]
+}
