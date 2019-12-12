@@ -7,20 +7,14 @@
  */
 
 // Note that this file isn't being transpiled so we need to keep it in ES5.
-
-var MATERIAL_PACKAGES = [
-  'core',
-  'button',
-  'icon',
-  'divider',
-  'list',
-  'sidenav',
-  'toolbar',
-];
-
 var COMPONENTS_PACKAGES = [
   'core',
   'footer',
+  'menu',
+];
+
+var LAYOUTS_PACKAGES = [
+  'actions-menu',
 ];
 
 /** Bazel runfile path referring to the "src/" folder of the project. */
@@ -33,42 +27,31 @@ var pathMapping = {};
 var packagesConfig = {};
 
 // Configure all primary entry-points.
-// configureEntryPoint('material');
-configureSDSEntryPoint('components');
+configureEntryPoint('components');
+configureEntryPoint('layouts');
 
 // Configure all secondary entry-points.
-// MATERIAL_PACKAGES.forEach(function(pkgName) {
-//   configureEntryPoint('material', pkgName);
-// });
-
 COMPONENTS_PACKAGES.forEach(function(pkgName) {
-  configureSDSEntryPoint('components', pkgName);
+  configureEntryPoint('components', pkgName);
+});
+
+LAYOUTS_PACKAGES.forEach(function(pkgName) {
+  configureEntryPoint('layouts', pkgName);
 });
 
 /** Configures the specified package, its entry-point and its examples. */
 function configureEntryPoint(pkgName, entryPoint) {
   var name = entryPoint ? pkgName + '/' + entryPoint : pkgName;
-  var examplesName = 'material-examples/' + name;
-
-  pathMapping['@angular/' + name] = srcRunfilePath + '/' + name;
-  pathMapping['@angular/' + examplesName] = srcRunfilePath + '/' + examplesName;
-  packagesConfig[srcRunfilePath + '/' + name] =
-      packagesConfig[srcRunfilePath + '/' + examplesName] = {main: 'index.js'};
-}
-
-console.log(pathMapping);
-console.log(packagesConfig);
-
-/** Configures the specified package, its entry-point and its examples. */
-function configureSDSEntryPoint(pkgName, entryPoint) {
-  var name = entryPoint ? pkgName + '/' + entryPoint : pkgName;
-  var examplesName = 'examples/' + name;
+  var examplesName = 'sds-examples/' + name;
 
   pathMapping['@gsa-sam/' + name] = srcRunfilePath + '/' + name;
   pathMapping['@gsa-sam/' + examplesName] = srcRunfilePath + '/' + examplesName;
   packagesConfig[srcRunfilePath + '/' + name] =
       packagesConfig[srcRunfilePath + '/' + examplesName] = {main: 'index.js'};
 }
+
+console.log(pathMapping);
+console.log(packagesConfig);
 
 var map = Object.assign({
   'main': 'main.js',
@@ -119,6 +102,11 @@ var packages = Object.assign({
   '@angular/material/list': {main: '../bundles/material-list.umd.js'},
   '@angular/material/sidenav': {main: '../bundles/material-sidenav.umd.js'},
   '@angular/material/toolbar': {main: '../bundles/material-toolbar.umd.js'},
+
+  // FontAwesome
+  '@fortawesome/fontawesome-svg-core': {main: 'index.js'},
+  '@fortawesome/angular-fontawesome': {main: 'bundles/angular-fontawesome.umd.js'},
+  '@fortawesome/free-solid-svg-icons': {main: 'index.js'},
 }, packagesConfig);
 
 // Configure the base path and map the different node packages.
