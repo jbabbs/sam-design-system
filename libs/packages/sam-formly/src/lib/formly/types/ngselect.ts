@@ -4,7 +4,6 @@ import { FieldType } from '@ngx-formly/core';
 @Component({
   selector: 'sds-formly-field-ng-select',
   template: ` 
-  test
   <ng-select [formControl]="formControl" [formlyAttributes]="field"
   [items]="to.items"
   [multiple]="to.multiple"
@@ -14,7 +13,6 @@ import { FieldType } from '@ngx-formly/core';
   [placeholder]="to.placeholder"
   >
 </ng-select>
-{{to | json}}
    `,
 })
 export class FormlyFieldNgSelectComponent extends FieldType { }
