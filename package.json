@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --aot",
     "build": "ng build",
     "test": "ng test",
     "lint": "./node_modules/.bin/nx lint && ng lint",
@@ -44,6 +44,7 @@
     "@angular/core": "^7.0.0",
     "@angular/forms": "^7.0.0",
     "@angular/material": "7.3.7",
+    "@ng-select/ng-select": "2.20.5",
     "@angular/platform-browser": "^7.0.0",
     "@angular/platform-browser-dynamic": "^7.0.0",
     "@angular/router": "^7.0.0",

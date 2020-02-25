@@ -6,13 +6,15 @@ import { ROUTES } from './app.routes';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [AppComponent],
   imports: [BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
-    FormsModule
+    FormsModule,
+    NgSelectModule
   ],
   providers: [
     {provide: LocationStrategy, useClass: PathLocationStrategy},

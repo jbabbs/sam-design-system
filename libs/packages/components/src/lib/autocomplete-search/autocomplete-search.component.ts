@@ -171,6 +171,7 @@ export class SDSAutocompleteSearchComponent implements ControlValueAccessor {
    * 
    */
   private focusRemoved() {
+    if (this.configuration){
     if (this.configuration.selectionMode === SelectionMode.SINGLE) {
       if (this.model.items.length > 0) {
         if (this.inputValue.length === 0) {
@@ -183,9 +184,11 @@ export class SDSAutocompleteSearchComponent implements ControlValueAccessor {
       } else {
         this.inputValue = '';
       }
-    } else {
+    } 
+  }else {
       this.inputValue = '';
     }
+  
   }
 
   textChange(event) {

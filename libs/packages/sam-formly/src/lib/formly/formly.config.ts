@@ -13,6 +13,7 @@ import { FormlyFormFieldFilterWrapperComponent } from './wrappers/form-field.fil
 import { FormlyFieldDatePickerComponent } from './types/datepicker';
 import { FormlyFieldButtonComponent } from './types/button';
 import { FormlyFieldConfig } from '@ngx-formly/core';
+import {FormlyFieldNgSelectComponent} from './types/ngselect';
 
 export const FIELD_TYPE_COMPONENTS = [
   FormlyFieldInputComponent,
@@ -27,6 +28,7 @@ export const FIELD_TYPE_COMPONENTS = [
   FormlyFieldDatePickerComponent,
   FormlyFormFieldFilterWrapperComponent,
   FormlyFieldButtonComponent,
+  FormlyFieldNgSelectComponent
 ];
 import { maxDateValidator, minDateValidator } from './formly.validators';
 
@@ -39,6 +41,11 @@ export const FORMLY_CONFIG: ConfigOption = {
     {
       name: 'input',
       component: FormlyFieldInputComponent,
+      wrappers: ['form-field'],
+    },
+    {
+      name: 'ngselect',
+      component: FormlyFieldNgSelectComponent,
       wrappers: ['form-field'],
     },
     {

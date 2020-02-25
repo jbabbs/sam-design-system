@@ -14,10 +14,13 @@ import { FilterWrapperSampleModule } from './feature/filter-wrapper/filter-wrapp
 import { FormlyFormsComponent } from './feature/formly-forms/formly-forms.component';
 import { FormlyFormsModule } from './feature/formly-forms/formly-forms.module';
 import { FormlyConditionalComponent } from './feature/formly-conditional/formly-conditional.component';
-
+import { NgSelectModule } from '@ng-select/ng-select';
+import { FilterNgSelectComponent } from './feature/filter-ngselect/filter-ngselect.component';
+import { FilterNgSelectSampleModule } from './feature/filter-ngselect/filter-ngselect.module';
 export const ROUTES: Routes = [
   { path: 'formlyInput', component: FormlyInputComponent },
   { path: 'formlyFilters', component: FilterWrapperComponent},
+  { path: 'formlyNgSelect', component: FilterNgSelectComponent},
   { path: 'formlyForms', component: FormlyFormsComponent },
   { path: 'formlyConditional', component:FormlyConditionalComponent },
 ];
@@ -28,11 +31,13 @@ export const ROUTES: Routes = [
     FormsModule,
     FormlyModule,
     ReactiveFormsModule,
+    NgSelectModule,
     FontAwesomeModule,
     RouterModule.forChild(ROUTES),
     FormlySampleModule,
     FormlyFormsModule,
     FilterWrapperSampleModule,
+    FilterNgSelectSampleModule
   ],
   exports: [RouterModule],
   declarations: [FormlyConditionalComponent]

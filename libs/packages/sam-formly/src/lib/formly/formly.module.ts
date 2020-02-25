@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlySelectModule } from '@ngx-formly/core/select';
+import { NgSelectModule } from '@ng-select/ng-select';
 import { FIELD_TYPE_COMPONENTS, FORMLY_CONFIG } from './formly.config';
 import {
   SdsAccordionModule, SdsAutocompleteModule
@@ -82,6 +83,7 @@ export { maxDateValidator, minDateValidator } from './formly.validators';
     MatInputModule,
     FontAwesomeModule,
     ReactiveFormsModule,
+    NgSelectModule,
     FormlySelectModule,
     FormlyModule.forChild(FORMLY_CONFIG),
     FormlyModule.forRoot({
