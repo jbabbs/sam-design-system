@@ -1,5 +1,9 @@
 {
   "extends": "../../../tsconfig.json",
+  "angularCompilerOptions": {
+    "fullTemplateTypeCheck": true,
+    "strictTemplates": true
+  },
   "compilerOptions": {
     "types": ["jasmine"]
   },
