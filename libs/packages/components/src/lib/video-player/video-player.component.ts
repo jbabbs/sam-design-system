@@ -1,4 +1,4 @@
-import { Component, Input, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, AfterViewInit, ViewEncapsulation, OnInit } from '@angular/core';
 import { InitPxVideo } from './js/px-video';
 
 @Component({
