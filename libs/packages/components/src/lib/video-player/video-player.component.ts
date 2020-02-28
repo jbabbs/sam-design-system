@@ -1,36 +1,27 @@
-import { Component, OnInit, Input, AfterViewInit, ViewEncapsulation } from '@angular/core';
+import { Component, Input, AfterViewInit, ViewEncapsulation } from '@angular/core';
 import { InitPxVideo } from '../video-player/js/px-video';
 
 @Component({
   selector: 'sds-video-player',
   templateUrl: './video-player.component.html',
   styleUrls: ['./css/px-video.css'],
-  encapsulation: ViewEncapsulation.None,
+  encapsulation: ViewEncapsulation.None
 })
-export class SdsVideoPlayerComponent implements OnInit, AfterViewInit {
-  VvtFileURL: string;
-  videoHeightEl: string;
-  videoWidthEl: string;
-  videoPosterEl: string;
-  videoPreloadEl: string;
-  videoSourceMp4El: string;
-  videoSourceWebmEl: string;
-  videoCaptionEl: string;
-  imageSrcEl: string;
-  videoIdEl: string;
+export class SdsVideoPlayerComponent implements AfterViewInit {
+
   GLOBAL_STRINGS: any;
 
-  @Input() videoSourceWebm: string;
-  @Input() videoSourceMp4: string;
-  @Input() videoHeight: string;
-  @Input() videoWidth: string;
+  @Input() videoSourceWebmEl: string;
+  @Input() videoSourceMp4El: string;
+  @Input() videoHeightEl: string;
+  @Input() videoWidthEl: string;
   @Input() videoPlayerId: string;
-  @Input() videoCaption: string;
-  @Input() videoPoster: string;
+  @Input() videoCaptionEl: string;
+  @Input() videoPosterEl: string;
   @Input() videoSeekInterval: number;
   @Input() videoDebug: boolean;
-  @Input() videoPreload: string;
-  @Input() imageSrc: string;
+  @Input() videoPreloadEl: string;
+  @Input() imageSrcEl: string;
   @Input() videoTitle: string;
   @Input() captionOnDefault: boolean;
 
@@ -67,15 +58,5 @@ export class SdsVideoPlayerComponent implements OnInit, AfterViewInit {
 
   constructor() {
 }
-  ngOnInit() {
-    this.videoWidthEl = this.videoWidth;
-    this.videoHeightEl = this.videoHeight;
-    this.videoIdEl = this.videoPlayerId;
-    this.videoPosterEl = this.videoPoster;
-    this.videoPreloadEl = this.videoPreload;
-    this.videoSourceMp4El = this.videoSourceMp4;
-    this.videoSourceWebmEl = this.videoSourceWebm;
-    this.imageSrcEl = this.imageSrc;
-    this.videoCaptionEl = this.videoCaption;
-  }
+
 }
