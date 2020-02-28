@@ -1,5 +1,5 @@
 import { Component, Input, AfterViewInit, ViewEncapsulation } from '@angular/core';
-import { InitPxVideo } from '../video-player/js/px-video';
+import { InitPxVideo } from './js/px-video';
 
 @Component({
   selector: 'sds-video-player',
