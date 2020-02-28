@@ -36,7 +36,7 @@ describe('VideoPlayerComponent', () => {
   it('Should get same video Height, Width, poster and Preload value  as an Input', ()=>{
     component.videoPosterEl = "http://www.kodaikanalholidays.com/img/packages/Ooty3Nights4DaysHolidayPackage.jpg";
     component.videoPreloadEl = 'none';
-    component.ngAfterViewInit();
+    component.ngOnInit();
     const element = fixture.debugElement.query(By.css('video'));
     element.nativeElement.setAttribute('height', component.videoHeightEl);
     expect(element.nativeElement.getAttribute("height")).toBe(component.videoHeightEl);
@@ -51,7 +51,7 @@ describe('VideoPlayerComponent', () => {
   it('div main container Id and width should same as an Input value ', ()=>{
     component.videoWidthEl = '640';
     component.videoPlayerId = 'sampleVid1';
-    component.ngAfterViewInit();
+    component.ngOnInit();
     const element = fixture.debugElement.query(By.css('div.px-video-container'));
     element.nativeElement.setAttribute('width', component.videoWidthEl);
     expect(element.nativeElement.getAttribute("width")).toBe(component.videoWidthEl);
@@ -62,7 +62,7 @@ describe('VideoPlayerComponent', () => {
   it('Video and Source element should be get same value as Input value', ()=> {
 
     component.videoSourceWebmEl = "http://techslides.com/demos/sample-videos/small.webm";
-    component.ngAfterViewInit();
+    component.ngOnInit();
     const element = fixture.debugElement.query(By.css('source'));
     element.nativeElement.setAttribute('src', component.videoSourceMp4El);
     expect(element.nativeElement.getAttribute('src')).toBe(component.videoSourceMp4El);
@@ -71,14 +71,14 @@ describe('VideoPlayerComponent', () => {
   });
 
   it('check the Input vlaue for anchor tag', ()=>{
-    component.ngAfterViewInit();
+    component.ngOnInit();
     const element = fixture.debugElement.query(By.css('a'));
     element.nativeElement.setAttribute('href', component.videoSourceMp4El);
     expect(element.nativeElement.getAttribute('href')).toBe(component.videoSourceMp4El);
   });
   it('check the Input vlaue for Images', ()=>{
 
-    component.ngAfterViewInit();
+    component.ngOnInit();
     const element = fixture.debugElement.query(By.css('img'));
     element.nativeElement.setAttribute('src', component.imageSrcEl);
     expect(element.nativeElement.getAttribute('src')).toBe(component.imageSrcEl);
@@ -89,14 +89,14 @@ describe('VideoPlayerComponent', () => {
   });
 
   it('should accept same width form Input', ()=>{
-    component.ngAfterViewInit();
+    component.ngOnInit();
     const element = fixture.debugElement.query(By.css('.px-video-controls'));
     element.nativeElement.setAttribute('width', component.videoWidthEl);
     expect(element.nativeElement.getAttribute('width')).toBe(component.videoWidthEl);
   });
 
   xit('should accept track caption from input', ()=>{
-    component.ngAfterViewInit();
+    component.ngOnInit();
     const element = fixture.debugElement.query(By.css('track'));
     element.nativeElement.setAttribute('src', component.videoCaptionEl);
     expect(element.nativeElement.getAttribute('src')).toBe(component.videoCaptionEl);

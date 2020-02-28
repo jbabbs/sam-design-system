@@ -7,7 +7,7 @@ import { InitPxVideo } from './js/px-video';
   styleUrls: ['./css/px-video.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class SdsVideoPlayerComponent implements AfterViewInit {
+export class SdsVideoPlayerComponent implements AfterViewInit, OnInit {
   @Input() videoSourceWebmEl: string;
   @Input() videoSourceMp4El: string;
   @Input() videoHeightEl: string;
@@ -22,6 +22,7 @@ export class SdsVideoPlayerComponent implements AfterViewInit {
   @Input() videoTitle: string;
   @Input() captionOnDefault: boolean;
 
+  ngOnInit(){}
 
   ngAfterViewInit() {
     InitPxVideo({
