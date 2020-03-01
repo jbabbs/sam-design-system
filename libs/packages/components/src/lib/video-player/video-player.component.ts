@@ -27,11 +27,12 @@ export class SdsVideoPlayerComponent implements AfterViewInit, OnInit {
   ngAfterViewInit() {
     InitPxVideo({
       videoId: this.videoPlayerId,
-      captionsOnDefault: this.captionOnDefault,
+      captionsOnDefault: true,
       seekInterval: this.videoSeekInterval,
-      videoTitle: this.videoTitle,
+      videoTitle: 'Video Player',
       debug: this.videoDebug
     });
+
   }
 
   constructor() {

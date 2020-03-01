@@ -17,9 +17,6 @@ export class VideoPlayerSampleComponent implements OnInit {
 	seekInterval: number;
 	debug: boolean;
   preload: string;
-  imageSrc: string;
-  videoTitle: string;
-  videoCaptionOnDefault: boolean;
 
   constructor() {
 
@@ -34,9 +31,6 @@ export class VideoPlayerSampleComponent implements OnInit {
     this.poster = "http://www.kodaikanalholidays.com/img/packages/Ooty3Nights4DaysHolidayPackage.jpg";
     this.seekInterval = 20;
     this.debug = true;
-    this.videoCaptionOnDefault = true;
-    this.videoTitle = 'clips of stand-up comedy';
     this.preload = "none";
-    this.imageSrc = "http://images.crestock.com/150000-159999/151031-xs.jpg";
   }
 }
