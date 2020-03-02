@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { SdsVideoPlayerComponent } from './video-player.component';
 import { By } from '@angular/platform-browser';
 import { InitPxVideo } from './js/px-video';
-import { Component } from '@angular/core';
 
 class IntiPxVideoObj {
   InitPxVideo(options){
@@ -28,7 +27,6 @@ describe('VideoPlayerComponent', () => {
     fixture = TestBed.createComponent(SdsVideoPlayerComponent);
     component = fixture.componentInstance;
     component.videoWidthEl = '640';
-    component.imageSrcEl = "http://images.crestock.com/150000-159999/151031-xs.jpg";
     component.videoHeightEl = '360';
     component.videoSourceMp4El = "https://media.w3.org/2010/05/sintel/trailer.mp4";
   });
@@ -70,25 +68,7 @@ describe('VideoPlayerComponent', () => {
     expect(element.nativeElement.getAttribute('src')).toBe(component.videoSourceWebmEl);
   });
 
-  it('check the Input vlaue for anchor tag', ()=>{
-    component.ngOnInit();
-    const element = fixture.debugElement.query(By.css('a'));
-    element.nativeElement.setAttribute('href', component.videoSourceMp4El);
-    expect(element.nativeElement.getAttribute('href')).toBe(component.videoSourceMp4El);
-  });
-  it('check the Input vlaue for Images', ()=>{
-
-    component.ngOnInit();
-    const element = fixture.debugElement.query(By.css('img'));
-    element.nativeElement.setAttribute('src', component.imageSrcEl);
-    expect(element.nativeElement.getAttribute('src')).toBe(component.imageSrcEl);
-    element.nativeElement.setAttribute('width', component.videoWidthEl);
-    expect(element.nativeElement.getAttribute('width')).toBe(component.videoWidthEl);
-    element.nativeElement.setAttribute('height', component.videoHeightEl);
-    expect(element.nativeElement.getAttribute('height')).toBe(component.videoHeightEl);
-  });
-
-  it('should accept same width form Input', ()=>{
+  it('should accept pxVideo width form Input', ()=>{
     component.ngOnInit();
     const element = fixture.debugElement.query(By.css('.px-video-controls'));
     element.nativeElement.setAttribute('width', component.videoWidthEl);

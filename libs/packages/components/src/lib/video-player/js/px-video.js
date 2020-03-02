@@ -1,15 +1,6 @@
 export function InitPxVideo(options) {
 
-// Added for IE fullscreen Issue by
-
-  // var wscript = new ActiveXObject("Wscript.shell");
-  // wscript.SendKeys("{F11}");
-
-
   "use strict";
-
-// console.log("Option Debug......."+options.videoTitle);
-
 
   // Utilities for caption time codes
 

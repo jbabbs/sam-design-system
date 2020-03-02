@@ -18,9 +18,7 @@ export class SdsVideoPlayerComponent implements AfterViewInit, OnInit {
   @Input() videoSeekInterval: number;
   @Input() videoDebug: boolean;
   @Input() videoPreloadEl: string;
-  @Input() imageSrcEl: string;
-  @Input() videoTitle: string;
-  @Input() captionOnDefault: boolean;
+
 
   ngOnInit(){}
 
