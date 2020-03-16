@@ -132,7 +132,7 @@ export const FORMLY_CONFIG: ConfigOption = {
     { name: 'form-field', component: FormlyWrapperFormFieldComponent },
     { name: 'accordionwrapper', component: FormlyAccordianFormFieldComponent },
     { name: 'filterwrapper', component: FormlyFormFieldFilterWrapperComponent },
-    { name: 'customwrapper', component: FormlyCustomWrapperComponent }
+    { name: 'sds-formly-wrapper', component: FormlyCustomWrapperComponent }
   ],
 
 };

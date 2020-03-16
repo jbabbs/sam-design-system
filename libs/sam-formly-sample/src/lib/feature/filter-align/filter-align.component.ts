@@ -18,6 +18,81 @@ export class FilterAlignComponent implements OnInit {
   options: FormlyFormOptions = {};
   public filterChange$ = new BehaviorSubject<object>(null);
 
+  accordionFieldGroupwrapper: FormlyFieldConfig[] = [
+    {
+      key: 'fgaw',
+      wrappers: ['sds-formly-wrapper'],
+      templateOptions: {
+        label: 'Keyword-search',
+        isAccordionFilter: true,
+        labelClass: 'usa-sr-only'
+      },
+      fieldGroup: [{
+        key: 'keyword',
+        type: 'input',
+        templateOptions: {
+          type: 'text',
+          label: 'Unique Entity ID',
+          tagText: 'DUNS',
+          tagClass: 'sds-tag--info-purple',
+        }
+      }]
+    }];
+
+    wrapperFieldGroup: FormlyFieldConfig[] = [
+      {
+        key: 'searchKeyword',
+        wrappers: ['sds-formly-wrapper'],
+        templateOptions: {
+          label: 'Keyword-search',
+          isAccordionFilter: false
+        },
+        fieldGroup: [{
+          key: 'keyword',
+          type: 'input',
+          templateOptions: {
+            type: 'text',
+            label: 'Unique Entity ID',
+            tagText: 'DUNS',
+            tagClass: 'sds-tag--info-purple',
+          }
+        }]
+      }];
+      
+    accordionwithoutgroup: FormlyFieldConfig[] = [
+      {
+        key: 'searchaccordion',
+        wrappers: ['sds-formly-wrapper'],
+        type: 'input',
+        templateOptions: {
+          label: 'Keyword-search',
+          description: 'Field Group wrapper with accordion',
+          required: true,
+          isAccordionFilter: true,
+          tagText: 'DUNS',
+          tagClass: 'sds-tag--info-purple',
+         
+        },
+      }];  
+
+  wrapperWithoutFieldGroup: FormlyFieldConfig[] = [
+    {
+      key: 'searchaccordion',
+      wrappers: ['sds-formly-wrapper'],
+      type: 'input',
+      templateOptions: {
+        label: 'Keyword-search',
+        description: 'Field Group wrapper with accordion',
+        required: true,
+        isAccordionFilter: false,
+        tagText: 'DUNS',
+        tagClass: 'sds-tag--info-purple',
+       
+      },
+    }];
+
+  // custom wrapper variable exapmle start
+
   sdsGroupWrapperAccordion: FormlyFieldConfig[] = [
     {
       key: 'filters',
@@ -137,7 +212,7 @@ export class FilterAlignComponent implements OnInit {
       },
     },
   ];
-
+  // custom wrapper variable exapmle start
   public ngOnInit() {
     this.filterChange$.subscribe(
       res => {
